@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/autosize.js/5.0.0/autosize.min.js" integrity="sha512-zibtOTbkMuTivXGk5b8yJFGLIB1jF90NuV7gwNcVWL3xZx/I1HdkXU2pCZhadsuaS5HMUzabvRqK4WmWeKrwUg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <title>Document</title>
+</head>
+<body>
+  <form action="/save" method="POST">
+    <%- include("_buttons.ejs", { canSave: true }) %>
+    <div class="wrapper">
+      <div class="line-numbers">
+        &gt;
+      </div>
+      <textarea autofocus name="value"><%= locals.value %></textarea>
+    </div>
+  </form>
+  <script>
+    autosize(document.querySelector('textarea'))
+  </script>
+</body>
+</html>
